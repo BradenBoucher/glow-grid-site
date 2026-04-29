@@ -6,10 +6,6 @@
 <title>Glow Grid Marketing | Social Media Management for Small Businesses</title>
 <meta name="description" content="Social media management, content creation, and ad strategy for small businesses ready to grow. Based in Massachusetts." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script type="application/ld+json">
@@ -23,583 +19,400 @@
   "url": "https://www.glowgridmarketing.com",
   "areaServed": "Massachusetts",
   "priceRange": "$$",
-  "sameAs": [
-    "https://www.instagram.com/glow.grid.marketing/"
-  ]
+  "sameAs": ["https://www.instagram.com/glow.grid.marketing/"]
 }
 </script>
 
 <style>
   :root {
-    --bg-deep: #07101F;
-    --bg-base: #0B1628;
-    --bg-elev: #131F36;
-    --bg-card: #16223C;
-    --line: rgba(255,255,255,0.07);
-    --line-strong: rgba(255,255,255,0.12);
-
-    --text-primary: #F5F3EE;
-    --text-secondary: #A8B3C9;
-    --text-muted: #6B7790;
-
-    --grad-pink: #EC4899;
-    --grad-purple: #A855F7;
-    --grad-orange: #FB923C;
-
-    --grad-main: linear-gradient(120deg, #A855F7 0%, #EC4899 50%, #FB923C 100%);
-    --grad-soft: linear-gradient(120deg, rgba(168,85,247,0.18) 0%, rgba(236,72,153,0.14) 50%, rgba(251,146,60,0.18) 100%);
+    --bg: #F7F2EA;          /* warm cream */
+    --bg-alt: #EFE8DC;      /* slightly deeper cream */
+    --bg-card: #FFFFFF;
+    --ink: #1F1A14;         /* warm near-black */
+    --ink-soft: #4A443C;    /* warm gray */
+    --ink-muted: #877E70;
+    --line: #DDD3C0;
+    --line-soft: #E8E0D0;
+    --accent: #D14B5C;      /* warm coral */
+    --accent-deep: #B33745;
+    --accent-soft: #F4D5D9;
   }
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Manrope', system-ui, sans-serif;
-    background: var(--bg-base);
-    color: var(--text-primary);
-    overflow-x: hidden;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.55;
+    font-weight: 400;
   }
 
-  .font-display { font-family: 'Fraunces', serif; font-optical-sizing: auto; }
-  .font-italic-display { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
-
-  /* Gradient text */
-  .grad-text {
-    background: var(--grad-main);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+  h1, h2, h3 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
   }
 
-  /* Animated mesh gradient background for hero */
-  .mesh-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: #FFF;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background 0.2s ease;
+    border: 1px solid var(--accent);
+    text-align: center;
   }
-  .mesh-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.45;
-    transform: translateZ(0); /* GPU layer */
-  }
-  .mesh-blob-1 {
-    width: 520px; height: 520px;
-    background: var(--grad-purple);
-    top: -120px; left: -100px;
-    animation: drift1 18s ease-in-out infinite alternate;
-  }
-  .mesh-blob-2 {
-    width: 600px; height: 600px;
-    background: var(--grad-pink);
-    top: 20%; right: -180px;
-    animation: drift2 22s ease-in-out infinite alternate;
-  }
-  .mesh-blob-3 {
-    width: 480px; height: 480px;
-    background: var(--grad-orange);
-    bottom: -200px; left: 30%;
-    animation: drift3 26s ease-in-out infinite alternate;
-    opacity: 0.32;
+  .btn-primary:hover {
+    background: var(--accent-deep);
+    border-color: var(--accent-deep);
   }
 
-  /* Mobile: kill animations + reduce blur drastically (huge perf win on scroll) */
-  @media (max-width: 768px) {
-    .mesh-blob {
-      animation: none !important;
-      filter: blur(50px);
-      opacity: 0.35;
-    }
-    .mesh-blob-1 { width: 320px; height: 320px; }
-    .mesh-blob-2 { width: 360px; height: 360px; }
-    .mesh-blob-3 { width: 300px; height: 300px; opacity: 0.25; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--ink);
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: 1px solid var(--ink);
+    transition: background 0.2s ease, color 0.2s ease;
+    text-align: center;
+  }
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: #FFF;
   }
 
-  /* Respect users who want reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .mesh-blob, .marquee-track {
-      animation: none !important;
-    }
-  }
-
-  @keyframes drift1 {
-    0%   { transform: translate(0,0) scale(1); }
-    100% { transform: translate(80px, 60px) scale(1.15); }
-  }
-  @keyframes drift2 {
-    0%   { transform: translate(0,0) scale(1); }
-    100% { transform: translate(-100px, 80px) scale(1.1); }
-  }
-  @keyframes drift3 {
-    0%   { transform: translate(0,0) scale(1); }
-    100% { transform: translate(60px, -50px) scale(1.2); }
-  }
-
-  /* Subtle grain overlay for depth */
-  .grain {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.6;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
-    z-index: 1;
-  }
-  @media (max-width: 768px) {
-    .grain { display: none; } /* SVG turbulence + blend mode is expensive on mobile */
-  }
-
-  /* Border-gradient utility (for the "popular" pricing card) */
-  .grad-border {
-    position: relative;
-    background: var(--bg-card);
-    border-radius: 20px;
-  }
-  .grad-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 1.5px;
-    border-radius: 20px;
-    background: var(--grad-main);
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box,
-       linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    pointer-events: none;
-  }
-
-  /* CTA button */
-  .btn-grad {
-    background: var(--grad-main);
-    background-size: 200% 200%;
-    background-position: 0% 50%;
-    transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 8px 24px -8px rgba(236, 72, 153, 0.45);
-  }
-  .btn-grad:hover {
-    background-position: 100% 50%;
-    transform: translateY(-1px);
-    box-shadow: 0 12px 32px -8px rgba(236, 72, 153, 0.55);
-  }
-
-  .btn-ghost {
-    border: 1px solid var(--line-strong);
-    transition: border-color 0.3s ease, background 0.3s ease, transform 0.2s ease;
-  }
-  .btn-ghost:hover {
-    border-color: rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.04);
-    transform: translateY(-1px);
-  }
-
-  /* Scroll-triggered reveal */
+  /* Subtle reveal animation */
   .reveal {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .reveal.in {
     opacity: 1;
     transform: translateY(0);
   }
 
-  /* Service card hover */
-  .svc-card {
-    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.4s ease, background 0.4s ease;
-  }
-  .svc-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(236, 72, 153, 0.35);
-    background: linear-gradient(180deg, rgba(168,85,247,0.05), rgba(251,146,60,0.03));
-  }
-
-  /* Marquee for services */
-  .marquee-track {
-    animation: marquee 38s linear infinite;
-  }
-  @keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* Section divider with gradient */
-  .grad-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.5) 50%, transparent 100%);
-  }
-
-  /* Floating CTA on mobile */
-  @media (max-width: 768px) {
-    .floating-cta { display: flex; }
-  }
-  .floating-cta { display: none; }
-
-  /* Custom selection color */
   ::selection {
-    background: rgba(236, 72, 153, 0.4);
+    background: var(--accent);
     color: white;
   }
 
-  /* Pricing toggle */
-  .price-popular {
-    transform: translateY(-8px);
+  .accent-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
   }
-  @media (max-width: 768px) {
-    .price-popular { transform: translateY(0); }
+  .accent-link:hover { color: var(--accent-deep); }
+
+  /* Service card hover */
+  .svc-card {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .svc-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* Pricing popular highlight */
+  .popular-card {
+    border-color: var(--accent) !important;
+    box-shadow: 0 4px 24px -8px rgba(209, 75, 92, 0.25);
+  }
+
+  /* Eyebrow with leading rule */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
   }
 </style>
 </head>
 
-<body class="min-h-screen">
+<body>
 
 <!-- ============ NAV ============ -->
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[rgba(11,22,40,0.7)] border-b border-[var(--line)]">
-  <nav class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2.5 group">
-      <span class="font-display font-semibold tracking-tight text-lg">
-        <span class="grad-text">Glow Grid</span>
-      </span>
-      <span class="font-display text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] hidden sm:inline">Marketing</span>
+<header class="sticky top-0 z-50 bg-[var(--bg)] border-b border-[var(--line-soft)]">
+  <nav class="max-w-6xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
+    <a href="#top" class="font-bold text-lg tracking-tight">
+      Glow Grid <span class="text-[var(--accent)]">Marketing</span>
     </a>
-    <div class="hidden md:flex items-center gap-8 text-sm text-[var(--text-secondary)]">
-      <a href="#services" class="hover:text-white transition">Services</a>
-      <a href="#pricing" class="hover:text-white transition">Pricing</a>
-      <a href="#about" class="hover:text-white transition">About</a>
+    <div class="hidden md:flex items-center gap-10 text-sm font-medium text-[var(--ink-soft)]">
+      <a href="#services" class="hover:text-[var(--ink)] transition">Services</a>
+      <a href="#pricing" class="hover:text-[var(--ink)] transition">Pricing</a>
+      <a href="#about" class="hover:text-[var(--ink)] transition">About</a>
+      <a href="#contact" class="hover:text-[var(--ink)] transition">Contact</a>
     </div>
-    <a href="#contact" class="btn-grad text-white font-medium text-sm px-5 py-2.5 rounded-full">
-      Book a Call
-    </a>
+    <a href="#contact" class="btn-primary !py-2.5 !px-5 text-sm hidden sm:inline-flex">Get In Touch</a>
   </nav>
 </header>
 
 <!-- ============ HERO ============ -->
-<section id="top" class="relative min-h-[92vh] flex items-center pt-28 pb-20 px-6 md:px-10 overflow-hidden">
-  <div class="mesh-bg">
-    <div class="mesh-blob mesh-blob-1"></div>
-    <div class="mesh-blob mesh-blob-2"></div>
-    <div class="mesh-blob mesh-blob-3"></div>
-  </div>
-  <div class="grain"></div>
+<section id="top" class="px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7">
+        <div class="reveal eyebrow">Massachusetts · Social Media Marketing</div>
 
-  <div class="relative z-10 max-w-5xl mx-auto w-full">
-    <div class="reveal flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-10">
-      <span class="w-2 h-2 rounded-full bg-[var(--grad-pink)]"></span>
-      <span>Massachusetts · Social Media Marketing</span>
+        <h1 class="reveal text-[2.6rem] sm:text-[3.4rem] md:text-[4.2rem] leading-[1.05] mb-7 tracking-tight" style="transition-delay: 0.1s;">
+          More followers,<br/>
+          more engagement,<br/>
+          <span class="text-[var(--accent)]">more customers.</span>
+        </h1>
+
+        <p class="reveal text-lg md:text-xl text-[var(--ink-soft)] max-w-xl mb-10 leading-relaxed" style="transition-delay: 0.2s;">
+          Done-for-you social media management, content creation, and ads, so you can spend less time posting and more time running your business.
+        </p>
+
+        <div class="reveal flex flex-col sm:flex-row gap-3" style="transition-delay: 0.3s;">
+          <a href="#contact" class="btn-primary">Get In Touch</a>
+          <a href="#pricing" class="btn-secondary">See Plans &amp; Pricing</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 reveal" style="transition-delay: 0.2s;">
+        <div class="relative aspect-[4/5] rounded overflow-hidden border border-[var(--line)] bg-[var(--bg-alt)]">
+          <img
+            src="founder.jpg"
+            alt="Ethan, founder of Glow Grid Marketing"
+            class="w-full h-full object-cover object-center block"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="absolute inset-0 items-center justify-center text-[var(--ink-muted)] text-sm" style="display:none;">
+            Founder photo
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <h1 class="reveal font-display text-[2.8rem] sm:text-[4rem] md:text-[5.4rem] lg:text-[6.2rem] leading-[0.98] tracking-tight font-medium mb-9" style="transition-delay: 0.1s;">
-      More followers,<br/>
-      more <span class="font-italic-display grad-text">engagement,</span><br/>
-      more <span class="font-italic-display grad-text">customers.</span>
-    </h1>
-
-    <p class="reveal text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mb-12 leading-relaxed" style="transition-delay: 0.2s;">
-      Done-for-you social media management, content creation, and ads — so you can spend less time posting and more time running your business.
+<!-- Tagline strip -->
+<div class="border-t border-b border-[var(--line-soft)] bg-[var(--bg-alt)]">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-6">
+    <p class="text-center text-sm text-[var(--ink-soft)]">
+      Helping small businesses across Massachusetts grow on Instagram, Facebook, and TikTok.
     </p>
-
-    <div class="reveal flex flex-col sm:flex-row gap-4 mb-16" style="transition-delay: 0.3s;">
-      <a href="#contact" class="btn-grad text-white font-medium px-7 py-3.5 rounded-full text-center">
-        Get In Touch
-      </a>
-      <a href="#pricing" class="btn-ghost text-white font-medium px-7 py-3.5 rounded-full text-center">
-        See Plans &amp; Pricing
-      </a>
-    </div>
-
-    <div class="reveal flex items-center gap-8 text-sm text-[var(--text-muted)] flex-wrap" style="transition-delay: 0.4s;">
-      <div>
-        <div class="font-display text-2xl text-white mb-0.5">3</div>
-        <div>Service tiers</div>
-      </div>
-      <div class="w-px h-10 bg-[var(--line-strong)] hidden sm:block"></div>
-      <div>
-        <div class="font-display text-2xl text-white mb-0.5">9</div>
-        <div>Capabilities</div>
-      </div>
-      <div class="w-px h-10 bg-[var(--line-strong)] hidden sm:block"></div>
-      <div>
-        <div class="font-display text-2xl text-white mb-0.5">1:1</div>
-        <div>Owner-led</div>
-      </div>
-    </div>
   </div>
-
-  <!-- Scroll cue -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-muted)] text-xs uppercase tracking-[0.3em] flex-col items-center gap-2 hidden md:flex">
-    <span>Scroll</span>
-    <div class="w-px h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent"></div>
-  </div>
-</section>
-
-<!-- ============ MARQUEE STRIP ============ -->
-<section class="py-8 border-y border-[var(--line)] bg-[var(--bg-deep)] overflow-hidden">
-  <div class="flex marquee-track whitespace-nowrap font-display text-3xl md:text-5xl text-[var(--text-muted)]">
-    <div class="flex items-center gap-12 pr-12">
-      <span>Strategy</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Content</span><span class="grad-text">·</span>
-      <span>Community</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Ads</span><span class="grad-text">·</span>
-      <span>Growth</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Brand</span><span class="grad-text">·</span>
-      <span>Analytics</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Design</span><span class="grad-text">·</span>
-    </div>
-    <div class="flex items-center gap-12 pr-12" aria-hidden="true">
-      <span>Strategy</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Content</span><span class="grad-text">·</span>
-      <span>Community</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Ads</span><span class="grad-text">·</span>
-      <span>Growth</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Brand</span><span class="grad-text">·</span>
-      <span>Analytics</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Design</span><span class="grad-text">·</span>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- ============ SERVICES ============ -->
-<section id="services" class="relative py-28 md:py-36 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-12 gap-10 mb-16">
+<section id="services" class="px-6 md:px-10 py-20 md:py-28">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 mb-16">
       <div class="md:col-span-5 reveal">
-        <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ Services</div>
-        <h2 class="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-medium">
+        <div class="eyebrow">Services</div>
+        <h2 class="text-3xl md:text-5xl leading-tight tracking-tight">
           Everything social,<br/>
-          <span class="font-italic-display grad-text">handled.</span>
+          <span class="text-[var(--accent)]">handled.</span>
         </h2>
       </div>
-      <div class="md:col-span-7 md:pt-12 reveal">
-        <p class="text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl">
-          From the strategy that gets you noticed to the daily posting that keeps you growing — pick the parts you want, leave the rest. Every service is custom-fit to your brand and audience.
+      <div class="md:col-span-7 md:pt-6 reveal">
+        <p class="text-lg text-[var(--ink-soft)] leading-relaxed max-w-xl">
+          From the strategy that gets you noticed to the daily posting that keeps you growing, pick the parts you want, leave the rest. Every service is custom-fit to your brand and audience.
         </p>
       </div>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Service Card -->
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7">
-        <div class="text-2xl font-display grad-text mb-1">01</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Social Media Management</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Daily posting, replies, DMs, and community engagement across every platform you care about.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7">
+        <h3 class="text-lg mb-2.5">Social Media Management</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Daily posting, replies, DMs, and community engagement across every platform you care about.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.05s;">
-        <div class="text-2xl font-display grad-text mb-1">02</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Content Creation</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Original photo, video, and copy that actually sounds like your brand — not a template.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.05s;">
+        <h3 class="text-lg mb-2.5">Content Creation</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Original photo, video, and copy that actually sounds like your brand, not a template.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.1s;">
-        <div class="text-2xl font-display grad-text mb-1">03</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Content Calendars</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Monthly plans built around your launches, seasonality, and the moments that matter to your audience.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.1s;">
+        <h3 class="text-lg mb-2.5">Content Calendars</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Monthly plans built around your launches, seasonality, and the moments that matter to your audience.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.15s;">
-        <div class="text-2xl font-display grad-text mb-1">04</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Scheduled Posting</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Posts go up at peak times, automatically — even when you're slammed or on vacation.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.15s;">
+        <h3 class="text-lg mb-2.5">Scheduled Posting</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Posts go up at peak times, automatically, even when you're slammed or on vacation.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.2s;">
-        <div class="text-2xl font-display grad-text mb-1">05</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Ad Creation &amp; Management</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Meta and TikTok ads built, launched, and optimized — with budget recommendations that respect your runway.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.2s;">
+        <h3 class="text-lg mb-2.5">Ad Creation &amp; Management</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Meta and Google ads built, launched, and optimized, with budget recommendations that respect your runway.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.25s;">
-        <div class="text-2xl font-display grad-text mb-1">06</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Analytics &amp; Reporting</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Monthly performance reports in plain English — what worked, what didn't, what we're doing next.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.25s;">
+        <h3 class="text-lg mb-2.5">Analytics &amp; Reporting</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Monthly performance reports in plain English. What worked, what didn't, what we're doing next.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.3s;">
-        <div class="text-2xl font-display grad-text mb-1">07</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Graphic Design</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Polished post graphics, story templates, ad creative, and visual identity that scales with you.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.3s;">
+        <h3 class="text-lg mb-2.5">Graphic Design</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Polished post graphics, story templates, ad creative, and visual identity that scales with you.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.35s;">
-        <div class="text-2xl font-display grad-text mb-1">08</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Brand Development</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Voice, tone, color, and visual language that makes your brand impossible to mistake for anyone else's.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.35s;">
+        <h3 class="text-lg mb-2.5">Brand Development</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">Voice, tone, color, and visual language that makes your brand impossible to mistake for anyone else's.</p>
       </div>
 
-      <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.4s;">
-        <div class="text-2xl font-display grad-text mb-1">09</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Consulting &amp; Strategy</h3>
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">One-on-one strategy sessions for brands that want to take social in-house — and need a roadmap.</p>
+      <div class="svc-card reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-7" style="transition-delay: 0.4s;">
+        <h3 class="text-lg mb-2.5">Consulting &amp; Strategy</h3>
+        <p class="text-[var(--ink-soft)] text-base leading-relaxed">One-on-one strategy sessions for brands that want to take social in-house and need a roadmap.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- divider -->
-<div class="grad-divider max-w-7xl mx-auto"></div>
-
-<!-- ============ WORK SECTION REMOVED FOR V1 ============ -->
-<!-- Re-add when real client work is available. Section template kept in git history. -->
-<!-- Also remove the "Work" link from the nav above when this section returns. -->
-
-
 <!-- ============ PRICING ============ -->
-<section id="pricing" class="relative py-28 md:py-36 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16 reveal">
-      <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ Pricing</div>
-      <h2 class="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-medium mb-5">
-        Three plans.<br/>
-        <span class="font-italic-display grad-text">Pick the one that fits.</span>
+<section id="pricing" class="px-6 md:px-10 py-20 md:py-28 bg-[var(--bg-alt)] border-y border-[var(--line-soft)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <div class="eyebrow" style="display: inline-flex;">Pricing</div>
+      <h2 class="text-3xl md:text-5xl leading-tight tracking-tight mb-4">
+        Three plans. <span class="text-[var(--accent)]">Pick the one that fits.</span>
       </h2>
-      <p class="text-lg text-[var(--text-secondary)] max-w-xl mx-auto">
+      <p class="text-lg text-[var(--ink-soft)] max-w-xl mx-auto">
         Month-to-month. No long-term contracts. Switch tiers any time.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <!-- Plan 1 -->
-      <div class="reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-8 flex flex-col">
-        <div class="mb-8">
-          <div class="text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">Foundation</div>
-          <div class="flex items-baseline gap-1 mb-2">
-            <span class="font-display text-5xl">$650</span>
-            <span class="text-[var(--text-muted)] text-sm">/month</span>
+    <div class="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      <div class="reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-8 flex flex-col">
+        <div class="mb-7 pb-6 border-b border-[var(--line-soft)]">
+          <div class="text-xs uppercase tracking-widest text-[var(--ink-muted)] mb-3 font-semibold">Foundation</div>
+          <div class="flex items-baseline gap-1.5 mb-3">
+            <span class="text-4xl font-bold">$650</span>
+            <span class="text-[var(--ink-muted)] text-sm">/month</span>
           </div>
-          <p class="text-sm text-[var(--text-secondary)]">Full social management, brand-ready and posting consistently.</p>
+          <p class="text-sm text-[var(--ink-soft)]">Full social management, brand-ready and posting consistently.</p>
         </div>
 
-        <ul class="space-y-3 text-sm text-[var(--text-secondary)] flex-grow mb-8">
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Social media management &amp; engagement</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Monthly content calendars (delivered in advance)</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Scheduled weekly posting across platforms</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Custom branded graphic design</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Brand development &amp; voice</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Monthly performance reports</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Monthly strategy call</li>
+        <ul class="space-y-2.5 text-sm text-[var(--ink-soft)] flex-grow mb-7">
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Social media management &amp; engagement</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Monthly content calendars</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Scheduled weekly posting</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Custom branded graphic design</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Brand development &amp; voice</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Monthly performance reports</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Monthly strategy call</li>
         </ul>
 
-        <a href="#contact" class="btn-ghost text-white text-center font-medium py-3 rounded-full">Choose Foundation</a>
+        <a href="#contact" class="btn-secondary w-full">Choose Foundation</a>
       </div>
 
-      <!-- Plan 2 - Popular -->
-      <div class="reveal price-popular grad-border p-8 flex flex-col relative" style="transition-delay: 0.1s;">
+      <div class="reveal popular-card rounded border bg-[var(--bg-card)] p-8 flex flex-col relative" style="transition-delay: 0.1s;">
         <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <div class="btn-grad text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
+          <div class="bg-[var(--accent)] text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
             Most Popular
           </div>
         </div>
 
-        <div class="mb-8">
-          <div class="text-xs uppercase tracking-[0.2em] grad-text mb-3 font-semibold">Growth</div>
-          <div class="flex items-baseline gap-1 mb-2">
-            <span class="font-display text-5xl">$1,000</span>
-            <span class="text-[var(--text-muted)] text-sm">/month</span>
+        <div class="mb-7 pb-6 border-b border-[var(--line-soft)]">
+          <div class="text-xs uppercase tracking-widest text-[var(--accent)] mb-3 font-semibold">Growth</div>
+          <div class="flex items-baseline gap-1.5 mb-3">
+            <span class="text-4xl font-bold">$1,000</span>
+            <span class="text-[var(--ink-muted)] text-sm">/month</span>
           </div>
-          <p class="text-sm text-[var(--text-secondary)]">Everything in Foundation, plus original photo &amp; video content.</p>
+          <p class="text-sm text-[var(--ink-soft)]">Everything in Foundation, plus original photo and video content.</p>
         </div>
 
-        <ul class="space-y-3 text-sm text-[var(--text-secondary)] flex-grow mb-8">
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Everything in Foundation</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Photo &amp; video shoots + editing</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Higher-quality custom visual content</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Expanded posting variety</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Bi-weekly strategy check-ins</li>
+        <ul class="space-y-2.5 text-sm text-[var(--ink-soft)] flex-grow mb-7">
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Everything in Foundation</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Photo &amp; video shoots + editing</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Higher-quality custom visual content</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Expanded posting variety</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Bi-weekly strategy check-ins</li>
         </ul>
 
-        <a href="#contact" class="btn-grad text-white text-center font-medium py-3 rounded-full">Choose Growth</a>
+        <a href="#contact" class="btn-primary w-full">Choose Growth</a>
       </div>
 
-      <!-- Plan 3 -->
-      <div class="reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-8 flex flex-col" style="transition-delay: 0.2s;">
-        <div class="mb-8">
-          <div class="text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">Full Glow</div>
-          <div class="flex items-baseline gap-1 mb-2">
-            <span class="font-display text-5xl">$1,500</span>
-            <span class="text-[var(--text-muted)] text-sm">/month</span>
+      <div class="reveal rounded border border-[var(--line)] bg-[var(--bg-card)] p-8 flex flex-col" style="transition-delay: 0.2s;">
+        <div class="mb-7 pb-6 border-b border-[var(--line-soft)]">
+          <div class="text-xs uppercase tracking-widest text-[var(--ink-muted)] mb-3 font-semibold">Full Glow</div>
+          <div class="flex items-baseline gap-1.5 mb-3">
+            <span class="text-4xl font-bold">$1,500</span>
+            <span class="text-[var(--ink-muted)] text-sm">/month</span>
           </div>
-          <p class="text-sm text-[var(--text-secondary)]">The full machine. Organic + paid, Meta + Google.</p>
+          <p class="text-sm text-[var(--ink-soft)]">The full machine. Organic plus paid, Meta plus Google.</p>
         </div>
 
-        <ul class="space-y-3 text-sm text-[var(--text-secondary)] flex-grow mb-8">
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Everything in Growth</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Meta &amp; Google ad creation + management</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Audience research &amp; targeting strategy</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Organic + paid performance insights</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Weekly strategy + on-demand support</li>
-          <li class="flex gap-2.5"><span class="grad-text">✓</span> Priority response &amp; faster turnaround</li>
+        <ul class="space-y-2.5 text-sm text-[var(--ink-soft)] flex-grow mb-7">
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Everything in Growth</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Meta &amp; Google ad creation + management</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Audience research &amp; targeting strategy</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Organic + paid performance insights</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Weekly strategy + on-demand support</li>
+          <li class="flex gap-2"><span class="text-[var(--accent)]">✓</span> Priority response &amp; faster turnaround</li>
         </ul>
 
-        <a href="#contact" class="btn-ghost text-white text-center font-medium py-3 rounded-full">Choose Full Glow</a>
+        <a href="#contact" class="btn-secondary w-full">Choose Full Glow</a>
       </div>
     </div>
 
-    <p class="text-center text-sm text-[var(--text-muted)] mt-10 reveal">
-      Not sure which fits? <a href="#contact" class="text-white hover:grad-text transition">Book a free 15-minute call</a> and we'll figure it out together.
+    <p class="text-center text-sm text-[var(--ink-muted)] mt-10 reveal">
+      Not sure which fits? <a href="#contact" class="accent-link">Reach out</a> and we'll figure it out together.
     </p>
   </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section id="about" class="relative py-28 md:py-36 px-6 md:px-10 bg-[var(--bg-deep)]">
-  <div class="max-w-7xl mx-auto">
+<section id="about" class="px-6 md:px-10 py-20 md:py-28">
+  <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-12 gap-12 items-center">
-      <!-- Photo -->
       <div class="md:col-span-5 reveal">
-        <div class="relative">
-          <!-- Decorative gradient block behind photo -->
-          <div class="absolute -inset-6 rounded-3xl opacity-50" style="background: var(--grad-soft); filter: blur(50px);"></div>
-
-          <div class="relative rounded-2xl overflow-hidden border border-[var(--line-strong)] aspect-[4/5] bg-[var(--bg-elev)]">
-            <!-- Photo - drop founder.jpg in project root (or update src to wherever it lives) -->
-            <img
-              src="founder.jpg"
-              alt="Founder of Glow Grid Marketing"
-              class="w-full h-full object-cover object-center block"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <!-- Fallback if photo missing -->
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-[var(--text-muted)] text-sm gap-2" style="display:none; background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(251,146,60,0.1));">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>
-              <span>Drop founder.jpg in project root</span>
-            </div>
-          </div>
-
-          <!-- Floating badge -->
-          <div class="absolute -bottom-4 -right-4 grad-border px-5 py-3" style="border-radius: 100px;">
-            <div class="text-xs text-[var(--text-muted)] uppercase tracking-wider">Founder</div>
-            <div class="font-display text-base">Based in MA</div>
-          </div>
+        <div class="rounded overflow-hidden border border-[var(--line)] aspect-[4/5] bg-[var(--bg-alt)]">
+          <img
+            src="founder.jpg"
+            alt="Ethan, founder of Glow Grid Marketing"
+            class="w-full h-full object-cover object-center block"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
         </div>
       </div>
 
-      <!-- Bio -->
       <div class="md:col-span-7 reveal" style="transition-delay: 0.1s;">
-        <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ The Person Behind the Posts</div>
-        <h2 class="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-medium mb-7">
-          Hi, I'm <span class="font-italic-display grad-text">[Name].</span>
+        <div class="eyebrow">About</div>
+        <h2 class="text-3xl md:text-5xl leading-tight tracking-tight mb-7">
+          Hi, I'm <span class="text-[var(--accent)]">Ethan.</span>
         </h2>
 
-        <div class="space-y-5 text-lg text-[var(--text-secondary)] leading-relaxed">
+        <div class="space-y-5 text-lg text-[var(--ink-soft)] leading-relaxed">
           <p>
-            [Founder bio goes here — 2 paragraphs about who you are, why you started Glow Grid, and what kind of small businesses you love working with. This is where personality lives. Keep it real and conversational, not corporate.]
+            I started Glow Grid because small businesses deserve marketing that actually feels like them, not a templated playbook copied from somebody else's brand. Most of my work comes from word of mouth and reaching out to small businesses I'd genuinely love to help.
           </p>
           <p>
-            [Second paragraph — your background, your approach, what makes working with you different. Mention that small businesses deserve marketing that feels human, not a robotic agency. End with something warm.]
+            I work one-on-one with every client. That means real conversations, real strategy, and content that sounds like you wrote it yourself, because we built it together.
           </p>
-        </div>
-
-        <div class="mt-10 flex flex-wrap items-center gap-4 text-sm">
-          <a href="#contact" class="btn-grad text-white font-medium px-6 py-3 rounded-full">Let's Talk</a>
-          <a href="https://www.instagram.com/glow.grid.marketing/" target="_blank" rel="noopener" class="text-[var(--text-secondary)] hover:text-white transition flex items-center gap-2">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>
-            <span>@glow.grid.marketing</span>
-          </a>
         </div>
       </div>
     </div>
@@ -607,98 +420,65 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact" class="relative py-28 md:py-36 px-6 md:px-10 overflow-hidden">
-  <!-- Subtle gradient blob in background -->
-  <div class="mesh-bg" style="opacity: 0.4;">
-    <div class="mesh-blob mesh-blob-2" style="opacity: 0.3;"></div>
-  </div>
-  <div class="grain"></div>
-
-  <div class="relative z-10 max-w-4xl mx-auto">
-    <div class="text-center mb-14 reveal">
-      <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ Get Started</div>
-      <h2 class="font-display text-4xl md:text-6xl leading-[1.05] tracking-tight font-medium mb-6">
-        Let's make<br/>
-        something <span class="font-italic-display grad-text">grow.</span>
+<section id="contact" class="px-6 md:px-10 py-20 md:py-28 bg-[var(--bg-alt)] border-t border-[var(--line-soft)]">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <div class="eyebrow" style="display: inline-flex;">Get Started</div>
+      <h2 class="text-3xl md:text-5xl leading-tight tracking-tight mb-5">
+        Let's make something <span class="text-[var(--accent)]">grow.</span>
       </h2>
-      <p class="text-lg text-[var(--text-secondary)] max-w-xl mx-auto">
+      <p class="text-lg text-[var(--ink-soft)] max-w-xl mx-auto">
         Tell me about your business and what you want from social. I'll get back within one business day.
       </p>
     </div>
 
-    <!-- Big direct-contact cards -->
-    <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto reveal" style="transition-delay: 0.1s;">
+    <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto reveal" style="transition-delay: 0.1s;">
 
-      <!-- Email card -->
-      <a href="mailto:glow.grid.marketing@gmail.com?subject=New%20inquiry%20from%20your%20website" class="group rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-8 flex flex-col items-start hover:border-[var(--grad-pink)] transition-all hover:-translate-y-1">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--grad-soft); border: 1px solid var(--line-strong);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <div class="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">Email</div>
-        <div class="font-display text-2xl mb-2 group-hover:grad-text transition">Send a message</div>
-        <div class="text-sm text-[var(--text-secondary)] mb-4 break-all">glow.grid.marketing@gmail.com</div>
-        <div class="text-xs text-[var(--text-muted)] mt-auto flex items-center gap-1.5">
-          <span>Tap to open your email app</span>
-          <span class="grad-text group-hover:translate-x-1 transition-transform inline-block">→</span>
+      <a href="mailto:glow.grid.marketing@gmail.com?subject=New%20inquiry%20from%20your%20website" class="group rounded border border-[var(--line)] bg-[var(--bg-card)] p-7 hover:border-[var(--accent)] transition">
+        <div class="text-xs uppercase tracking-widest text-[var(--ink-muted)] mb-3 font-semibold">Email</div>
+        <div class="text-xl font-bold mb-2 group-hover:text-[var(--accent)] transition">Send a message</div>
+        <div class="text-sm text-[var(--ink-soft)] break-all mb-4">glow.grid.marketing@gmail.com</div>
+        <div class="text-sm font-semibold text-[var(--accent)] flex items-center gap-1.5">
+          Tap to open your email
+          <span class="group-hover:translate-x-1 transition-transform inline-block">→</span>
         </div>
       </a>
 
-      <!-- Phone card -->
-      <a href="tel:+17813363723" class="group rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-8 flex flex-col items-start hover:border-[var(--grad-pink)] transition-all hover:-translate-y-1">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--grad-soft); border: 1px solid var(--line-strong);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </div>
-        <div class="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">Call or text</div>
-        <div class="font-display text-2xl mb-2 group-hover:grad-text transition">781-336-3723</div>
-        <div class="text-sm text-[var(--text-secondary)] mb-4">Mon–Fri · 9am – 6pm ET</div>
-        <div class="text-xs text-[var(--text-muted)] mt-auto flex items-center gap-1.5">
-          <span>Tap to call</span>
-          <span class="grad-text group-hover:translate-x-1 transition-transform inline-block">→</span>
+      <a href="tel:+17813363723" class="group rounded border border-[var(--line)] bg-[var(--bg-card)] p-7 hover:border-[var(--accent)] transition">
+        <div class="text-xs uppercase tracking-widest text-[var(--ink-muted)] mb-3 font-semibold">Call or text</div>
+        <div class="text-xl font-bold mb-2 group-hover:text-[var(--accent)] transition">781-336-3723</div>
+        <div class="text-sm text-[var(--ink-soft)] mb-4">Mon–Fri · 9am – 6pm ET</div>
+        <div class="text-sm font-semibold text-[var(--accent)] flex items-center gap-1.5">
+          Tap to call
+          <span class="group-hover:translate-x-1 transition-transform inline-block">→</span>
         </div>
       </a>
 
     </div>
 
-    <!-- Secondary: Instagram + small note -->
-    <div class="text-center mt-12 reveal" style="transition-delay: 0.2s;">
-      <div class="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-4">Or follow along</div>
-      <a href="https://www.instagram.com/glow.grid.marketing/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-[var(--line-strong)] hover:border-[var(--grad-pink)] transition group">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>
-        <span class="font-medium group-hover:grad-text transition">@glow.grid.marketing</span>
+    <div class="text-center mt-10 reveal" style="transition-delay: 0.2s;">
+      <div class="text-xs uppercase tracking-widest text-[var(--ink-muted)] mb-3 font-semibold">Or follow along</div>
+      <a href="https://www.instagram.com/glow.grid.marketing/" target="_blank" rel="noopener" class="accent-link font-semibold">
+        @glow.grid.marketing on Instagram
       </a>
-      <p class="text-sm text-[var(--text-muted)] mt-8 max-w-md mx-auto">
-        I reply to every inquiry within one business day. Let me know about your business, where you're at, and what you're hoping to grow.
-      </p>
     </div>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="border-t border-[var(--line)] bg-[var(--bg-deep)] py-10 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[var(--text-muted)]">
-    <div class="font-display">
-      <span class="grad-text font-semibold">Glow Grid</span> Marketing · &copy; 2026
+<footer class="border-t border-[var(--line-soft)] py-10 px-6 md:px-10">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[var(--ink-muted)]">
+    <div class="font-semibold text-[var(--ink-soft)]">
+      Glow Grid <span class="text-[var(--accent)]">Marketing</span> · &copy; 2026
     </div>
-    <div class="flex items-center gap-6">
-      <a href="mailto:glow.grid.marketing@gmail.com" class="hover:text-white transition">glow.grid.marketing@gmail.com</a>
-      <span class="hidden sm:inline">·</span>
-      <a href="tel:+17813363723" class="hover:text-white transition">781-336-3723</a>
+    <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+      <a href="mailto:glow.grid.marketing@gmail.com" class="hover:text-[var(--ink)] transition">glow.grid.marketing@gmail.com</a>
+      <a href="tel:+17813363723" class="hover:text-[var(--ink)] transition">781-336-3723</a>
     </div>
   </div>
 </footer>
 
-<!-- Floating mobile CTA -->
-<a href="#contact" class="floating-cta fixed bottom-5 right-5 z-50 btn-grad text-white font-medium px-5 py-3 rounded-full text-sm shadow-lg items-center gap-2">
-  Book a Call
-</a>
-
 <script>
-  // Scroll-triggered reveals
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
@@ -710,7 +490,6 @@
 
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-  // Trigger hero reveals on load
   window.addEventListener('load', () => {
     document.querySelectorAll('#top .reveal').forEach((el) => el.classList.add('in'));
   });
