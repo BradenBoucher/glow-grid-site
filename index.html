@@ -121,7 +121,7 @@
 
   /* Respect users who want reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    .mesh-blob, .marquee-track {
+    .mesh-blob {
       animation: none !important;
     }
   }
@@ -219,15 +219,6 @@
     background: linear-gradient(180deg, rgba(168,85,247,0.05), rgba(251,146,60,0.03));
   }
 
-  /* Marquee for services */
-  .marquee-track {
-    animation: marquee 38s linear infinite;
-  }
-  @keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
   /* Section divider with gradient */
   .grad-divider {
     height: 1px;
@@ -288,12 +279,7 @@
   <div class="grain"></div>
 
   <div class="relative z-10 max-w-5xl mx-auto w-full">
-    <div class="reveal flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-10">
-      <span class="w-2 h-2 rounded-full bg-[var(--grad-pink)]"></span>
-      <span>Massachusetts · Social Media Marketing</span>
-    </div>
-
-    <h1 class="reveal font-display text-[2.8rem] sm:text-[4rem] md:text-[5.4rem] lg:text-[6.2rem] leading-[0.98] tracking-tight font-medium mb-9" style="transition-delay: 0.1s;">
+    <h1 class="reveal font-display text-[2.8rem] sm:text-[4rem] md:text-[5.4rem] lg:text-[6.2rem] leading-[0.98] tracking-tight font-medium mb-9 mt-4">
       More followers,<br/>
       more <span class="font-italic-display grad-text">engagement,</span><br/>
       more <span class="font-italic-display grad-text">customers.</span>
@@ -303,62 +289,13 @@
       Done-for-you social media management, content creation, and ads — so you can spend less time posting and more time running your business.
     </p>
 
-    <div class="reveal flex flex-col sm:flex-row gap-4 mb-16" style="transition-delay: 0.3s;">
+    <div class="reveal flex flex-col sm:flex-row gap-4" style="transition-delay: 0.3s;">
       <a href="#contact" class="btn-grad text-white font-medium px-7 py-3.5 rounded-full text-center">
         Get In Touch
       </a>
       <a href="#pricing" class="btn-ghost text-white font-medium px-7 py-3.5 rounded-full text-center">
         See Plans &amp; Pricing
       </a>
-    </div>
-
-    <div class="reveal flex items-center gap-8 text-sm text-[var(--text-muted)] flex-wrap" style="transition-delay: 0.4s;">
-      <div>
-        <div class="font-display text-2xl text-white mb-0.5">3</div>
-        <div>Service tiers</div>
-      </div>
-      <div class="w-px h-10 bg-[var(--line-strong)] hidden sm:block"></div>
-      <div>
-        <div class="font-display text-2xl text-white mb-0.5">9</div>
-        <div>Capabilities</div>
-      </div>
-      <div class="w-px h-10 bg-[var(--line-strong)] hidden sm:block"></div>
-      <div>
-        <div class="font-display text-2xl text-white mb-0.5">1:1</div>
-        <div>Owner-led</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scroll cue -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-muted)] text-xs uppercase tracking-[0.3em] flex-col items-center gap-2 hidden md:flex">
-    <span>Scroll</span>
-    <div class="w-px h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent"></div>
-  </div>
-</section>
-
-<!-- ============ MARQUEE STRIP ============ -->
-<section class="py-8 border-y border-[var(--line)] bg-[var(--bg-deep)] overflow-hidden">
-  <div class="flex marquee-track whitespace-nowrap font-display text-3xl md:text-5xl text-[var(--text-muted)]">
-    <div class="flex items-center gap-12 pr-12">
-      <span>Strategy</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Content</span><span class="grad-text">·</span>
-      <span>Community</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Ads</span><span class="grad-text">·</span>
-      <span>Growth</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Brand</span><span class="grad-text">·</span>
-      <span>Analytics</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Design</span><span class="grad-text">·</span>
-    </div>
-    <div class="flex items-center gap-12 pr-12" aria-hidden="true">
-      <span>Strategy</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Content</span><span class="grad-text">·</span>
-      <span>Community</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Ads</span><span class="grad-text">·</span>
-      <span>Growth</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Brand</span><span class="grad-text">·</span>
-      <span>Analytics</span><span class="grad-text">·</span>
-      <span class="font-italic-display">Design</span><span class="grad-text">·</span>
     </div>
   </div>
 </section>
@@ -368,7 +305,6 @@
   <div class="max-w-7xl mx-auto">
     <div class="grid md:grid-cols-12 gap-10 mb-16">
       <div class="md:col-span-5 reveal">
-        <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ Services</div>
         <h2 class="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-medium">
           Everything social,<br/>
           <span class="font-italic-display grad-text">handled.</span>
@@ -384,56 +320,47 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <!-- Service Card -->
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7">
-        <div class="text-2xl font-display grad-text mb-1">01</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Social Media Management</h3>
+        <h3 class="font-display text-xl mb-3">Social Media Management</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Daily posting, replies, DMs, and community engagement across every platform you care about.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.05s;">
-        <div class="text-2xl font-display grad-text mb-1">02</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Content Creation</h3>
+        <h3 class="font-display text-xl mb-3">Content Creation</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Original photo, video, and copy that actually sounds like your brand — not a template.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.1s;">
-        <div class="text-2xl font-display grad-text mb-1">03</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Content Calendars</h3>
+        <h3 class="font-display text-xl mb-3">Content Calendars</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Monthly plans built around your launches, seasonality, and the moments that matter to your audience.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.15s;">
-        <div class="text-2xl font-display grad-text mb-1">04</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Scheduled Posting</h3>
+        <h3 class="font-display text-xl mb-3">Scheduled Posting</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Posts go up at peak times, automatically — even when you're slammed or on vacation.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.2s;">
-        <div class="text-2xl font-display grad-text mb-1">05</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Ad Creation &amp; Management</h3>
+        <h3 class="font-display text-xl mb-3">Ad Creation &amp; Management</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Meta and TikTok ads built, launched, and optimized — with budget recommendations that respect your runway.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.25s;">
-        <div class="text-2xl font-display grad-text mb-1">06</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Analytics &amp; Reporting</h3>
+        <h3 class="font-display text-xl mb-3">Analytics &amp; Reporting</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Monthly performance reports in plain English — what worked, what didn't, what we're doing next.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.3s;">
-        <div class="text-2xl font-display grad-text mb-1">07</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Graphic Design</h3>
+        <h3 class="font-display text-xl mb-3">Graphic Design</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Polished post graphics, story templates, ad creative, and visual identity that scales with you.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.35s;">
-        <div class="text-2xl font-display grad-text mb-1">08</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Brand Development</h3>
+        <h3 class="font-display text-xl mb-3">Brand Development</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Voice, tone, color, and visual language that makes your brand impossible to mistake for anyone else's.</p>
       </div>
 
       <div class="svc-card reveal rounded-2xl border border-[var(--line)] bg-[var(--bg-elev)] p-7" style="transition-delay: 0.4s;">
-        <div class="text-2xl font-display grad-text mb-1">09</div>
-        <h3 class="font-display text-xl mb-3 mt-4">Consulting &amp; Strategy</h3>
+        <h3 class="font-display text-xl mb-3">Consulting &amp; Strategy</h3>
         <p class="text-[var(--text-secondary)] text-sm leading-relaxed">One-on-one strategy sessions for brands that want to take social in-house — and need a roadmap.</p>
       </div>
     </div>
@@ -452,7 +379,6 @@
 <section id="pricing" class="relative py-28 md:py-36 px-6 md:px-10">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ Pricing</div>
       <h2 class="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-medium mb-5">
         Three plans.<br/>
         <span class="font-italic-display grad-text">Pick the one that fits.</span>
@@ -552,54 +478,35 @@
       <!-- Photo -->
       <div class="md:col-span-5 reveal">
         <div class="relative">
-          <!-- Decorative gradient block behind photo -->
           <div class="absolute -inset-6 rounded-3xl opacity-50" style="background: var(--grad-soft); filter: blur(50px);"></div>
-
           <div class="relative rounded-2xl overflow-hidden border border-[var(--line-strong)] aspect-[4/5] bg-[var(--bg-elev)]">
-            <!-- Photo - drop founder.jpg in project root (or update src to wherever it lives) -->
             <img
               src="founder.jpg"
-              alt="Founder of Glow Grid Marketing"
+              alt="Ethan, founder of Glow Grid Marketing"
               class="w-full h-full object-cover object-center block"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
-            <!-- Fallback if photo missing -->
             <div class="absolute inset-0 flex flex-col items-center justify-center text-[var(--text-muted)] text-sm gap-2" style="display:none; background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(251,146,60,0.1));">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>
               <span>Drop founder.jpg in project root</span>
             </div>
-          </div>
-
-          <!-- Floating badge -->
-          <div class="absolute -bottom-4 -right-4 grad-border px-5 py-3" style="border-radius: 100px;">
-            <div class="text-xs text-[var(--text-muted)] uppercase tracking-wider">Founder</div>
-            <div class="font-display text-base">Based in MA</div>
           </div>
         </div>
       </div>
 
       <!-- Bio -->
       <div class="md:col-span-7 reveal" style="transition-delay: 0.1s;">
-        <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ The Person Behind the Posts</div>
         <h2 class="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-medium mb-7">
-          Hi, I'm <span class="font-italic-display grad-text">[Name].</span>
+          Hi, I'm <span class="font-italic-display grad-text">Ethan.</span>
         </h2>
 
         <div class="space-y-5 text-lg text-[var(--text-secondary)] leading-relaxed">
           <p>
-            [Founder bio goes here — 2 paragraphs about who you are, why you started Glow Grid, and what kind of small businesses you love working with. This is where personality lives. Keep it real and conversational, not corporate.]
+            I started Glow Grid because small businesses deserve marketing that actually feels like them — not a templated playbook copied from somebody else's brand. Most of my work comes from word of mouth and reaching out to small businesses I'd genuinely love to help.
           </p>
           <p>
-            [Second paragraph — your background, your approach, what makes working with you different. Mention that small businesses deserve marketing that feels human, not a robotic agency. End with something warm.]
+            I work one-on-one with every client. That means real conversations, real strategy, and content that sounds like you wrote it yourself — because we built it together.
           </p>
-        </div>
-
-        <div class="mt-10 flex flex-wrap items-center gap-4 text-sm">
-          <a href="#contact" class="btn-grad text-white font-medium px-6 py-3 rounded-full">Let's Talk</a>
-          <a href="https://www.instagram.com/glow.grid.marketing/" target="_blank" rel="noopener" class="text-[var(--text-secondary)] hover:text-white transition flex items-center gap-2">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>
-            <span>@glow.grid.marketing</span>
-          </a>
         </div>
       </div>
     </div>
@@ -616,7 +523,6 @@
 
   <div class="relative z-10 max-w-4xl mx-auto">
     <div class="text-center mb-14 reveal">
-      <div class="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-5">/ Get Started</div>
       <h2 class="font-display text-4xl md:text-6xl leading-[1.05] tracking-tight font-medium mb-6">
         Let's make<br/>
         something <span class="font-italic-display grad-text">grow.</span>
