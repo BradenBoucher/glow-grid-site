@@ -1,0 +1,5 @@
+# Redirect www to apex (or vice versa, comment one out)
+# https://www.glowgridmarketing.com/* https://glowgridmarketing.com/:splat 301!
+
+# Send all unknown routes to index (single-page site)
+/* /index.html 200
