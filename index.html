@@ -121,7 +121,7 @@
 
   /* Respect users who want reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    .mesh-blob, .marquee-track, .slow-rotate {
+    .mesh-blob, .marquee-track {
       animation: none !important;
     }
   }
@@ -253,13 +253,6 @@
   @media (max-width: 768px) {
     .price-popular { transform: translateY(0); }
   }
-
-  /* Slow rotate for grid logo motif */
-  @keyframes slowrotate {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-  .slow-rotate { animation: slowrotate 60s linear infinite; }
 </style>
 </head>
 
@@ -286,7 +279,7 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section id="top" class="relative min-h-screen flex items-center pt-24 pb-20 px-6 md:px-10 overflow-hidden">
+<section id="top" class="relative min-h-[92vh] flex items-center pt-28 pb-20 px-6 md:px-10 overflow-hidden">
   <div class="mesh-bg">
     <div class="mesh-blob mesh-blob-1"></div>
     <div class="mesh-blob mesh-blob-2"></div>
@@ -294,86 +287,51 @@
   </div>
   <div class="grain"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto w-full">
-    <div class="grid md:grid-cols-12 gap-10 items-center">
-      <div class="md:col-span-7">
-        <div class="reveal flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-8">
-          <span class="w-2 h-2 rounded-full bg-[var(--grad-pink)]"></span>
-          <span>Massachusetts · Social Media Marketing</span>
-        </div>
+  <div class="relative z-10 max-w-5xl mx-auto w-full">
+    <div class="reveal flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-10">
+      <span class="w-2 h-2 rounded-full bg-[var(--grad-pink)]"></span>
+      <span>Massachusetts · Social Media Marketing</span>
+    </div>
 
-        <h1 class="reveal font-display text-[2.6rem] sm:text-[3.4rem] md:text-[4.6rem] leading-[1.02] tracking-tight font-medium mb-7" style="transition-delay: 0.1s;">
-          More followers,<br/>
-          more <span class="font-italic-display grad-text">engagement,</span><br/>
-          more <span class="font-italic-display grad-text">customers.</span>
-        </h1>
+    <h1 class="reveal font-display text-[2.8rem] sm:text-[4rem] md:text-[5.4rem] lg:text-[6.2rem] leading-[0.98] tracking-tight font-medium mb-9" style="transition-delay: 0.1s;">
+      More followers,<br/>
+      more <span class="font-italic-display grad-text">engagement,</span><br/>
+      more <span class="font-italic-display grad-text">customers.</span>
+    </h1>
 
-        <p class="reveal text-lg md:text-xl text-[var(--text-secondary)] max-w-xl mb-10 leading-relaxed" style="transition-delay: 0.2s;">
-          Done-for-you social media management, content creation, and ads — so you can spend less time posting and more time running your business.
-        </p>
+    <p class="reveal text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mb-12 leading-relaxed" style="transition-delay: 0.2s;">
+      Done-for-you social media management, content creation, and ads — so you can spend less time posting and more time running your business.
+    </p>
 
-        <div class="reveal flex flex-col sm:flex-row gap-4" style="transition-delay: 0.3s;">
-          <a href="#contact" class="btn-grad text-white font-medium px-7 py-3.5 rounded-full text-center">
-            Get In Touch
-          </a>
-          <a href="#pricing" class="btn-ghost text-white font-medium px-7 py-3.5 rounded-full text-center">
-            See Plans &amp; Pricing
-          </a>
-        </div>
+    <div class="reveal flex flex-col sm:flex-row gap-4 mb-16" style="transition-delay: 0.3s;">
+      <a href="#contact" class="btn-grad text-white font-medium px-7 py-3.5 rounded-full text-center">
+        Get In Touch
+      </a>
+      <a href="#pricing" class="btn-ghost text-white font-medium px-7 py-3.5 rounded-full text-center">
+        See Plans &amp; Pricing
+      </a>
+    </div>
 
-        <div class="reveal mt-14 flex items-center gap-8 text-sm text-[var(--text-muted)]" style="transition-delay: 0.4s;">
-          <div>
-            <div class="font-display text-2xl text-white mb-0.5">3+</div>
-            <div>Service tiers</div>
-          </div>
-          <div class="w-px h-10 bg-[var(--line-strong)]"></div>
-          <div>
-            <div class="font-display text-2xl text-white mb-0.5">9</div>
-            <div>Capabilities</div>
-          </div>
-          <div class="w-px h-10 bg-[var(--line-strong)]"></div>
-          <div>
-            <div class="font-display text-2xl text-white mb-0.5">1:1</div>
-            <div>Owner-led</div>
-          </div>
-        </div>
+    <div class="reveal flex items-center gap-8 text-sm text-[var(--text-muted)] flex-wrap" style="transition-delay: 0.4s;">
+      <div>
+        <div class="font-display text-2xl text-white mb-0.5">3</div>
+        <div>Service tiers</div>
       </div>
-
-      <!-- Decorative grid motif (echoes logo) -->
-      <div class="md:col-span-5 hidden md:flex justify-center items-center">
-        <div class="relative w-[360px] h-[360px]">
-          <!-- The grid-of-squares motif from the logo -->
-          <div class="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-3 slow-rotate" style="animation-duration: 80s;">
-            <div class="rounded-md bg-gradient-to-br from-purple-500 to-purple-700 opacity-90"></div>
-            <div class="rounded-md bg-gradient-to-br from-pink-500 to-purple-600 opacity-80"></div>
-            <div class="rounded-md bg-gradient-to-br from-pink-500 to-pink-600 opacity-90"></div>
-            <div class="rounded-md bg-gradient-to-br from-purple-500 to-pink-500 opacity-80"></div>
-            <div class="rounded-md bg-gradient-to-br from-pink-500 to-orange-500 opacity-90"></div>
-            <div class="rounded-md bg-gradient-to-br from-orange-500 to-amber-500 opacity-90"></div>
-            <div class="rounded-md bg-gradient-to-br from-pink-500 to-orange-400 opacity-80"></div>
-            <div class="rounded-md bg-gradient-to-br from-orange-500 to-amber-400 opacity-90"></div>
-            <div class="rounded-md bg-gradient-to-br from-amber-500 to-orange-600 opacity-80"></div>
-          </div>
-
-          <!-- Arrow overlay echoing the logo -->
-          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 30px rgba(236,72,153,0.4));">
-            <defs>
-              <linearGradient id="arrowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#A855F7"/>
-                <stop offset="50%" stop-color="#EC4899"/>
-                <stop offset="100%" stop-color="#FB923C"/>
-              </linearGradient>
-            </defs>
-            <path d="M 60 280 Q 130 220 200 180 Q 270 140 310 70" stroke="url(#arrowGrad)" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <path d="M 280 60 L 320 60 L 320 100" stroke="url(#arrowGrad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </div>
+      <div class="w-px h-10 bg-[var(--line-strong)] hidden sm:block"></div>
+      <div>
+        <div class="font-display text-2xl text-white mb-0.5">9</div>
+        <div>Capabilities</div>
+      </div>
+      <div class="w-px h-10 bg-[var(--line-strong)] hidden sm:block"></div>
+      <div>
+        <div class="font-display text-2xl text-white mb-0.5">1:1</div>
+        <div>Owner-led</div>
       </div>
     </div>
   </div>
 
   <!-- Scroll cue -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-muted)] text-xs uppercase tracking-[0.3em] flex flex-col items-center gap-2 hidden md:flex">
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-muted)] text-xs uppercase tracking-[0.3em] flex-col items-center gap-2 hidden md:flex">
     <span>Scroll</span>
     <div class="w-px h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent"></div>
   </div>
@@ -595,14 +553,20 @@
       <div class="md:col-span-5 reveal">
         <div class="relative">
           <!-- Decorative gradient block behind photo -->
-          <div class="absolute -inset-4 rounded-2xl opacity-60" style="background: var(--grad-soft); filter: blur(40px);"></div>
+          <div class="absolute -inset-6 rounded-3xl opacity-50" style="background: var(--grad-soft); filter: blur(50px);"></div>
 
-          <div class="relative rounded-2xl overflow-hidden border border-[var(--line-strong)]">
-            <!-- Photo placeholder - replace src with actual hosted photo URL -->
-            <img src="founder.jpg" alt="Founder of Glow Grid Marketing" class="w-full h-auto block" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+          <div class="relative rounded-2xl overflow-hidden border border-[var(--line-strong)] aspect-[4/5] bg-[var(--bg-elev)]">
+            <!-- Photo - drop founder.jpg in project root (or update src to wherever it lives) -->
+            <img
+              src="founder.jpg"
+              alt="Founder of Glow Grid Marketing"
+              class="w-full h-full object-cover object-center block"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
             <!-- Fallback if photo missing -->
-            <div class="aspect-[4/5] flex items-center justify-center text-[var(--text-muted)] text-sm" style="display:none; background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(251,146,60,0.15));">
-              [Founder photo goes here]
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-[var(--text-muted)] text-sm gap-2" style="display:none; background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(251,146,60,0.1));">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>
+              <span>Drop founder.jpg in project root</span>
             </div>
           </div>
 
